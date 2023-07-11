@@ -28,7 +28,7 @@ export default function Form() {
           },
         })} />
         <p>{errors.username?.message}</p>
-        <input placeholder='sayhii@yahoo.com' type="email" {...register("email", {
+        <input placeholder='abc@xyz.com' type="email" {...register("email", {
         required: "Email is required",
         pattern: {
           value: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/i ,
@@ -37,7 +37,7 @@ export default function Form() {
       })}
       />
       <p>{errors.email?.message}</p>
-      <input placeholder='AahaUuhu' type="password" {...register("password", {
+      <input placeholder='Password' type="password" {...register("password", {
         required: "Password is required",
         // required: true,
         // minLength: 5,
