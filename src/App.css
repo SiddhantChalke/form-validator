@@ -39,12 +39,13 @@
 /* .main-body{
   padding: 20px;
 } */
-.App{
+.App {
   height: 100vh;
-  background: rgb(255,132,0);
-background: linear-gradient(133deg, rgba(255,132,0,0.5046393557422969) 0%, rgba(141,0,255,0.5018382352941176) 100%);
+  background: rgb(255, 132, 0);
+  background: linear-gradient(133deg, rgba(255, 132, 0, 0.5046393557422969) 0%, rgba(141, 0, 255, 0.5018382352941176) 100%);
 }
-.form-div{
+
+.form-div {
   width: 40vw;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -54,12 +55,13 @@ background: linear-gradient(133deg, rgba(255,132,0,0.5046393557422969) 0%, rgba(
   border: 1px solid red;
   text-align: center;
   backdrop-filter: blur(16px) saturate(149%);
-    -webkit-backdrop-filter: blur(16px) saturate(149%);
-    background-color: rgba(255, 255, 255, 0.42);
-    border-radius: 12px;
-    border: 1px solid rgba(209, 213, 219, 0.3);
+  -webkit-backdrop-filter: blur(16px) saturate(149%);
+  background-color: rgba(255, 255, 255, 0.42);
+  border-radius: 12px;
+  border: 1px solid rgba(209, 213, 219, 0.3);
 }
-form{
+
+form {
   height: 88%;
   display: flex;
   flex-direction: column;
@@ -67,7 +69,8 @@ form{
   align-items: center;
   justify-content: space-between;
 }
-input{
+
+input {
   padding: 0.2rem;
   font-size: 1.2rem;
   text-align: center;
@@ -75,29 +78,42 @@ input{
   border-radius: 15px;
   border: none;
 }
-select{
+
+select {
   padding: 0.2rem;
   font-size: 1.2rem;
   text-align: center;
   width: 70%;
   border-radius: 15px;
 }
-option{
+
+option {
   border-radius: 15px;
 }
-button{
+
+button {
   padding: 0.4rem;
-    font-size: 1.2rem;
-    text-align: center;
-    background-color: rgb(80, 215, 220);
-    width: 50%;
-    border: none;
+  font-size: 1.2rem;
+  text-align: center;
+  background-color: rgb(80, 215, 220);
+  width: 50%;
+  border: none;
 }
-button:hover{
+
+button:hover {
   background-color: crimson;
   color: aliceblue;
 }
-p{
+
+.toggle {
+  width: 52px;
+  height: 28px;
+  font-size: 17px;
+  border-radius: 2px 14px 14px 2px;
+  background-color: darkgray;
+}
+
+p {
   margin: 2px 0 10px;
   color: red;
 }

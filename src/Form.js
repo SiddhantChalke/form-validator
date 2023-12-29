@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 // https://www.youtube.com/watch?v=9LwETbBytJ0
+
 export default function Form() {
+
     const { register, handleSubmit, formState: { errors } } = useForm({
       mode: "all"
     });
@@ -9,13 +11,18 @@ export default function Form() {
     const onSubmit = (data) => {
       alert('SUCCESS!! \n' + JSON.stringify(data, null, 4));
       return false;
-
     }
-    return (
-        
+
+    const [password, setPassword] = useState(true);
+    const togglePassword =()=>{
+      setPassword(!password);
+    }
+
+    return ( 
     <div className='form-div'>
       <form onSubmit={handleSubmit(onSubmit)} autoComplete="off">
         <h2>Sign Up</h2>
+        {/* Username */}
         <input placeholder='Username' type="text" {...register('username',{
           required:'Username is required',
           minLength:{
@@ -28,6 +35,8 @@ export default function Form() {
           },
         })} />
         <p>{errors.username?.message}</p>
+
+        {/* Email */}
         <input placeholder='abc@xyz.com' type="email" {...register("email", {
         required: "Email is required",
         pattern: {
@@ -37,7 +46,10 @@ export default function Form() {
       })}
       />
       <p>{errors.email?.message}</p>
-      <input placeholder='Password' type="password" {...register("password", {
+
+      {/* Password */}
+      <div style={{width:'85%'}}>
+      <input placeholder='Password' type={ password ? 'password':'text' } {...register("password", {
         required: "Password is required",
         // required: true,
         // minLength: 5,
@@ -50,7 +62,11 @@ export default function Form() {
       })}
       
       />
+      {password? <button onClick={togglePassword} className='toggle'>Show</button> : <button onClick={togglePassword} className='toggle'>Hide</button>}
+      </div>
       <p>{errors.password?.message } </p>
+
+      {/* Gender */}
       <select {...register('gender',{
         required: 'Gender is required',
       })}>
@@ -59,6 +75,7 @@ export default function Form() {
         <option value="Male">Male</option>
       </select>
       <p>{errors.gender?.message } </p>
+
       <button>Submit</button>
       </form>
     </div>
